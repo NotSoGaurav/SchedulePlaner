@@ -11,7 +11,7 @@
 
                 Data Access Layer (Persistence): Handled by the save() and load() methods within the Planner class, which manages reading and writing data to the planner.json file.
 
-7. Design Diagrams
+    7. Design Diagrams
 
 7.1 Process Flow / Workflow Diagram
 
