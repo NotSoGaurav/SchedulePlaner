@@ -74,7 +74,7 @@ class Planner:
         return (done/total)*100, done, total
 
     def get_schedule(self, available_mins, start_time_str):
-        tasks = sorted(self.get_tasks(), key=lambda t: (t.priority, t.time))
+        tasks = sorted(self.get_tasks(), key2=lambda t: (t.priority, t.time))
         schedule, time_spent = [], 0
         try: current_time = dt.datetime.strptime(start_time_str, TIME_FMT)
         except: return []
