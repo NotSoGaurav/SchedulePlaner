@@ -78,7 +78,6 @@ class Planner:
         schedule, time_spent = [], 0
         try: current_time = dt.datetime.strptime(start_time_str, TIME_FMT)
         except: return []
-
         for t in tasks:
             if time_spent + t.time <= available_mins:
                 start_str = current_time.strftime(TIME_FMT)
