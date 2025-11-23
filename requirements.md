@@ -16,7 +16,7 @@ The project is structured around three major functional modules: Data Modeling, 
         (2) Input for task time must accept flexible units (Minutes, Hours, Days) 
             and correctly convert them to a single internal unit (minutes).
 
-     C. Automation and Reporting
+    C. Automation and Reporting
         (1) The system must generate a daily schedule by prompting the user for a 
             study time range (e.g., 9:00 AM - 1:00 PM).
 

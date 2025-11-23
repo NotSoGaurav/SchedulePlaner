@@ -1,5 +1,4 @@
 # System Architecture and Design Artifacts
-        
    # System Architecture
 
      The Smart Study Planner follows a simple, robust layered architecture suitable for a standalone CLI application.
