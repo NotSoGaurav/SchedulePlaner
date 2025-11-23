@@ -1,18 +1,53 @@
 {
     "courses": [
         {
-            "name": "AMITY",
+            "name": "cse",
             "tasks": [
                 {
-                    "id": "ed8820ea-e740-4349-81b0-0cb7c810d38f",
-                    "name": "Go around",
-                    "course": "AMITY",
-                    "time": 300,
-                    "priority": 1,
-                    "deadline": "26",
+                    "id": "8d2a859c-4433-4a5f-9c52-b092af9951dc",
+                    "name": "coding",
+                    "course": "cse",
+                    "time": 60,
+                    "priority": 3,
+                    "deadline": "-",
                     "completed": false
                 }
             ]
+        },
+        {
+            "name": "maths",
+            "tasks": [
+                {
+                    "id": "3ebb27b1-5933-4d8b-82a1-c3cd06f6858a",
+                    "name": "practice",
+                    "course": "maths",
+                    "time": 60,
+                    "priority": 1,
+                    "deadline": "-",
+                    "completed": false
+                },
+                {
+                    "id": "cb3fa03d-03c0-49d9-9bad-097b6d1a8c91",
+                    "name": "module 2",
+                    "course": "maths",
+                    "time": 180,
+                    "priority": 3,
+                    "deadline": "-",
+                    "completed": false
+                }
+            ]
+        },
+        {
+            "name": "chy",
+            "tasks": []
+        },
+        {
+            "name": "phy",
+            "tasks": []
+        },
+        {
+            "name": "eee",
+            "tasks": []
         }
     ]
 }

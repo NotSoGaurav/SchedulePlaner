@@ -6,6 +6,15 @@ import uuid
 DATA_FILE = "planner.json"
 TIME_FMT = '%I:%M %p'
 
+# --- Compact Time Parser Function ---
+def parse_time(s):
+    s = s.lower().strip()
+    if s.endswith('h'): return int(float(s[:-1]) * 60)
+    if s.endswith('d'): return int(float(s[:-1]) * 1440)
+    if s.endswith('m'): return int(s[:-1])
+    if s.isdigit(): return int(s) # Default to minutes
+    raise ValueError("Unknown format")
+
 class Task:
     def __init__(self, n, c, t, p, d, id=None, done=False):
         self.id = str(uuid.uuid4()) if not id else id
@@ -40,7 +49,7 @@ class Planner:
             except: print("\nError loading data. Starting fresh.")
 
     def save(self):
-        data = {'courses': [c.to_dict() for c in self.courses.values()]}
+        data = {'courses': [c.to_dict() for c in self.courses.values()]};
         with open(DATA_FILE, 'w') as f: json.dump(data, f, indent=4)
         print("\nSaved planner data.")
 
@@ -74,10 +83,11 @@ class Planner:
         return (done/total)*100, done, total
 
     def get_schedule(self, available_mins, start_time_str):
-        tasks = sorted(self.get_tasks(), key2=lambda t: (t.priority, t.time))
+        tasks = sorted(self.get_tasks(), key=lambda t: (t.priority, t.time))
         schedule, time_spent = [], 0
         try: current_time = dt.datetime.strptime(start_time_str, TIME_FMT)
         except: return []
+
         for t in tasks:
             if time_spent + t.time <= available_mins:
                 start_str = current_time.strftime(TIME_FMT)
@@ -122,9 +132,16 @@ def cli_interface():
             for i, n in enumerate(courses): print(f"{i+1}. {n}")
             c_idx = get_input("Course #:", int, lambda x: 1<=x<=len(courses)); c_name = courses[c_idx-1]
             n = get_input("Task Name: "); d = get_input("Deadline: ")
-            unit = get_input("Time Unit (1=Min, 2=Hr, 3=Day): ", int, lambda x: 1<=x<=3)
-            amount = get_input("Time Amount: ", int, lambda x: x>0)
-            t_min = amount * [1, 60, 1440][unit-1]
+            
+            # --- SIMPLE TIME INPUT ---
+            t_min = 0
+            while t_min <= 0:
+                t_str = get_input("Study time required (e.g. 90m, 2h, 1d): ")
+                try: t_min = parse_time(t_str)
+                except: print("Invalid format. Use 90m, 2h, etc."); continue
+                if t_min <= 0: print("Time must be positive.")
+            # -------------------------
+
             prio = get_input("Priority (1-3): ", int, lambda x: 1<=x<=3)
             p.add_task(c_name, n, t_min, prio, d)
         elif choice == 3: # View All Tasks
