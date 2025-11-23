@@ -11,22 +11,22 @@
 
                 Data Access Layer (Persistence): Handled by the save() and load() methods within the Planner class, which manages reading and writing data to the planner.json file.
 
-    7. Design Diagrams
+  # Design Diagrams
 
-7.1 Process Flow / Workflow Diagram
+    1. Process Flow / Workflow Diagram
 
-This diagram outlines the primary user path for generating a daily schedule.
+          This diagram outlines the primary user path for generating a daily schedule.
 
-7.2 Class Diagram (UML)
+    2. Class Diagram (UML)
 
-This UML Class Diagram shows the key entities and their relationships, adhering to the OOP principles used in the implementation.
+          This UML Class Diagram shows the key entities and their relationships, adhering to the OOP principles used in the implementation.
 
-Key Relationships:
+        Key Relationships:
 
-Composition (1:M): A Course object has multiple Task objects.
+          Composition (1:M): A Course object has multiple Task objects.
 
-Aggregation (1:M): The central Planner object aggregates multiple Course objects.
+          Aggregation (1:M): The central Planner object aggregates multiple Course objects.
 
-7.3 Component Diagram (UML)
+    3. Component Diagram (UML)
 
-The component diagram illustrates the modular structure defined in the code, fulfilling the requirement for a modular design, even if compiled into one file.
+      The component diagram illustrates the modular structure defined in the code, fulfilling the requirement for a modular design, even if compiled into one file.

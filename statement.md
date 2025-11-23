@@ -1,4 +1,4 @@
-Project Statement: Smart Study Planner
+# Project Statement: Smart Study Planner
 
 # Problem Statement
 Students frequently face academic stress due to poor time allocation and difficulty prioritizing tasks across multiple subjects. Existing static to-do lists lack the intelligence to convert a course backlog into an executable, time-constrained daily plan. This project addresses the necessity for an automated, intelligent Command Line Interface (CLI) application that generates a time-boxed study schedule, thereby simplifying daily planning and boosting study efficiency.
