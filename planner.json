@@ -24,7 +24,7 @@
                     "time": 60,
                     "priority": 1,
                     "deadline": "-",
-                    "completed": false
+                    "completed": true
                 },
                 {
                     "id": "cb3fa03d-03c0-49d9-9bad-097b6d1a8c91",
@@ -43,10 +43,32 @@
         },
         {
             "name": "phy",
-            "tasks": []
+            "tasks": [
+                {
+                    "id": "07b7271f-bef8-4e16-9075-9a7b0871372d",
+                    "name": "thevenins theoram",
+                    "course": "phy",
+                    "time": 180,
+                    "priority": 1,
+                    "deadline": "-",
+                    "completed": true
+                }
+            ]
         },
         {
             "name": "eee",
+            "tasks": []
+        },
+        {
+            "name": "designing",
+            "tasks": []
+        },
+        {
+            "name": "arts",
+            "tasks": []
+        },
+        {
+            "name": "cmd learning",
             "tasks": []
         }
     ]
